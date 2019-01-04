@@ -7,6 +7,12 @@ package view;
 
 import config.FirefoxInitializer;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,6 +25,15 @@ import javax.swing.JToggleButton;
 import javax.swing.table.DefaultTableModel;
 import modal.Rates;
 import modal.TableData;
+
+import org.apache.poi.ss.usermodel.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFileChooser;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -74,11 +89,16 @@ public class Main extends javax.swing.JFrame {
     boolean ethereum_short = true;
     boolean ethereum_intrest = true;
 
-    int interval = 1;
+    static int interval = 10;
+    FirefoxDriver innerDriver;
+
+    String location = "";
 
     public Main() {
         initComponents();
         setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        start.setEnabled(false);
+        open_sheet.setEnabled(false);
     }
 
     /**
@@ -149,7 +169,9 @@ public class Main extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        start = new javax.swing.JButton();
+        open_sheet = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
@@ -757,6 +779,7 @@ public class Main extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("10");
         jTextField1.setToolTipText("minutes");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -773,10 +796,27 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("START");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        start.setText("START");
+        start.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                startActionPerformed(evt);
+            }
+        });
+
+        open_sheet.setText("Open Sheet");
+        open_sheet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        open_sheet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                open_sheetActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Location");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -794,20 +834,29 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jButton1)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                        .addGap(79, 79, 79)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(start)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(open_sheet)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton4, open_sheet, start});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(start)
+                    .addComponent(open_sheet))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -850,7 +899,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -858,23 +907,153 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println("INTERVAL "+interval);
+    private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
+        start.setEnabled(false);
+        jButton4.setEnabled(false);
+        
+        try {
+            createXlsFile();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println("INTERVAL " + interval);
+        System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
+        FirefoxOptions options2 = new FirefoxOptions();
+        options2.setHeadless(true);
+        innerDriver = new FirefoxDriver(options2);
+
         new Thread(() -> {
             FirefoxDriver innerDriver;
             System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
             FirefoxOptions options = new FirefoxOptions();
             options.setHeadless(true);
+            while (true) {
+                try {
 
-            try {
-                scrapeRates(new FirefoxDriver(options));
-                Thread.sleep(interval);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                    scrapeRates(new FirefoxDriver(options));
+                    Thread.sleep(interval * 60000);
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (IOException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InvalidFormatException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        }).start();
+
+    }//GEN-LAST:event_startActionPerformed
+
+    public void createXlsFile() throws IOException {
+        try {
+            new FileInputStream(location + "/forex.xlsx");
+        } catch (FileNotFoundException e) {
+            new File("/var/lib/tomcat8/forex").mkdir();
+            Workbook workbook = new XSSFWorkbook();
+
+            CreationHelper createHelper = workbook.getCreationHelper();
+            Sheet sheet = workbook.createSheet("forex");
+            Font headerFont = workbook.createFont();
+            headerFont.setBold(true);
+            headerFont.setFontHeightInPoints((short) 14);
+            headerFont.setColor(IndexedColors.RED.getIndex());
+
+            CellStyle headerCellStyle = workbook.createCellStyle();
+            headerCellStyle.setFont(headerFont);
+            Row headerRow = sheet.createRow(0);
+            ArrayList<String> list = new ArrayList();
+            list.add("Date");
+            for (int i = 0; i < 30; i++) {
+                list.add("Price");
+                list.add("Short");
+                list.add("Intrest");
             }
 
-        }).start();
-    }//GEN-LAST:event_jButton1ActionPerformed
+            for (int i = 0; i < list.size(); i++) {
+                Cell cell = headerRow.createCell(i);
+                cell.setCellValue(list.get(i));
+                cell.setCellStyle(headerCellStyle);
+            }
+
+            CellStyle dateCellStyle = workbook.createCellStyle();
+            dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd/MM/yyyy"));
+
+            FileOutputStream fileOut = new FileOutputStream(location + "/forex.xlsx");
+            workbook.write(fileOut);
+            fileOut.close();
+            System.out.println("Excel Created");
+        }
+
+    }
+
+    private void appendRow(TableData data) throws IOException, InvalidFormatException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+
+        try {
+
+            Workbook wb3 = WorkbookFactory.create(new FileInputStream(location + "/forex.xlsx"));
+            Sheet sh = wb3.getSheet("forex");
+            int rows = sh.getLastRowNum();
+//            sh.shiftRows(2, sh.getLastRowNum(), 1, true, true);
+            Row row = sh.createRow(++rows);
+
+            row.createCell(0).setCellValue(formatter.format(date));
+
+            row.createCell(1).setCellValue(data.getEURUSD().getAsk());
+            row.createCell(2).setCellValue(data.getEURUSD().getShortValue());
+            row.createCell(3).setCellValue(data.getEURUSD().getChangeOpenInterest());
+
+            row.createCell(4).setCellValue(data.getGBPUSD().getAsk());
+            row.createCell(5).setCellValue(data.getGBPUSD().getShortValue());
+            row.createCell(6).setCellValue(data.getGBPUSD().getChangeOpenInterest());
+
+            row.createCell(7).setCellValue(data.getUSDJPY().getAsk());
+            row.createCell(8).setCellValue(data.getUSDJPY().getShortValue());
+            row.createCell(9).setCellValue(data.getUSDJPY().getChangeOpenInterest());
+
+            row.createCell(10).setCellValue(data.getUSDCAD().getAsk());
+            row.createCell(11).setCellValue(data.getUSDCAD().getShortValue());
+            row.createCell(12).setCellValue(data.getUSDCAD().getChangeOpenInterest());
+
+            row.createCell(13).setCellValue(data.getAUDUSD().getAsk());
+            row.createCell(14).setCellValue(data.getAUDUSD().getShortValue());
+            row.createCell(15).setCellValue(data.getAUDUSD().getChangeOpenInterest());
+
+            row.createCell(16).setCellValue(data.getNZDUSD().getAsk());
+            row.createCell(17).setCellValue(data.getNZDUSD().getShortValue());
+            row.createCell(18).setCellValue(data.getNZDUSD().getChangeOpenInterest());
+
+            row.createCell(19).setCellValue(data.getSP500().getAsk());
+            row.createCell(20).setCellValue(data.getSP500().getShortValue());
+            row.createCell(21).setCellValue(data.getSP500().getChangeOpenInterest());
+
+            row.createCell(22).setCellValue(data.getUS30WallSttreet().getAsk());
+            row.createCell(23).setCellValue(data.getUS30WallSttreet().getShortValue());
+            row.createCell(24).setCellValue(data.getUS30WallSttreet().getChangeOpenInterest());
+
+            row.createCell(25).setCellValue(data.getBitcoin().getAsk());
+            row.createCell(26).setCellValue(data.getBitcoin().getShortValue());
+            row.createCell(27).setCellValue(data.getBitcoin().getChangeOpenInterest());
+
+            row.createCell(28).setCellValue(data.getEthereum().getAsk());
+            row.createCell(29).setCellValue(data.getEthereum().getShortValue());
+            row.createCell(30).setCellValue(data.getEthereum().getChangeOpenInterest());
+
+            FileOutputStream fileOut = new FileOutputStream(location + "/forex.xlsx");
+            wb3.write(fileOut);
+            fileOut.close();
+            System.out.println("excel updated.");
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -1002,10 +1181,30 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int min = Integer.parseInt(jTextField1.getText());
-        interval = min * 60000;
+        interval = min;
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void scrapeRates(FirefoxDriver driver) throws InterruptedException {
+    private void open_sheetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_sheetActionPerformed
+        try {
+            File file = new File(location + "/forex.xlsx");
+            Desktop.getDesktop().open(file);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_open_sheetActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        JFileChooser f = new JFileChooser();
+        f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        f.showSaveDialog(null);
+        System.out.println(f.getSelectedFile().getAbsolutePath());
+        location = f.getSelectedFile().getAbsolutePath();
+        start.setEnabled(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void scrapeRates(FirefoxDriver driver) throws InterruptedException, IOException, InvalidFormatException {
         Rates r = null;
         TableData data = new TableData();
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -1077,7 +1276,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
         setData(data);
-        driver.quit();
+        driver.close();
     }
 
     /**
@@ -1094,16 +1293,24 @@ public class Main extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -1116,8 +1323,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1178,9 +1385,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JButton open_sheet;
+    private javax.swing.JButton start;
     // End of variables declaration//GEN-END:variables
 
-    private void setData(TableData data) {
+    private void setData(TableData data) throws IOException, InvalidFormatException {
         System.out.println("setting data");
 
         data = checkDisable(data);
@@ -1205,40 +1414,30 @@ public class Main extends javax.swing.JFrame {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+
+        appendRow(data);
+        open_sheet.setEnabled(true);
     }
 
     private Rates getInnerData(Rates r, String attribute) throws InterruptedException {
-        FirefoxDriver innerDriver;
-        System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
-        FirefoxOptions options = new FirefoxOptions();
-        options.setHeadless(true);
-        innerDriver = new FirefoxDriver(options);
 
         innerDriver.get(attribute);
-        Thread.sleep(10000);
-//        System.out.println(innerDriver.findElementByXPath("/html/body/div[1]/div[2]/div[3]/div[1]/div[2]").getAttribute("innerHTML"));
+        Thread.sleep(5000);
+
         WebElement sentiment = null;
         String shortValue = null;
         String interest = null;
-//        try {             .margin-bottom-40 > div:nth-child(1) > div:nth-child(3)                            
+
         sentiment = innerDriver.findElementByCssSelector(".margin-bottom-40 > div:nth-child(1) > div:nth-child(3)");
         shortValue = sentiment.findElements(By.xpath("./*")).get(2).getAttribute("innerText");
         interest = sentiment.findElements(By.xpath("./*")).get(3).getAttribute("innerText");
 
-//        } catch (Exception e) {
-//        
-//            sentiment = innerDriver.findElementByXPath("/html/body/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]").findElements(By.xpath("./*")).get(2)
-//                    .findElements(By.xpath("./*")).get(2);
-//            shortValue = sentiment.findElements(By.xpath("./*")).get(2).getAttribute("innerText");
-//            interest = sentiment.findElements(By.xpath("./*")).get(3).getAttribute("innerText");
-//        }
         System.out.println(shortValue + "=======");
         System.out.println(interest + "=======");
 
         r.setShortValue(shortValue.split("\n")[1]);
         r.setChangeOpenInterest(interest.split("\n")[1]);
         System.out.println(r.getSymbol() + " collected");
-        innerDriver.quit();
         return r;
     }
 
