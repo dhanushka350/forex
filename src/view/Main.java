@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import org.openqa.selenium.By;
@@ -910,7 +911,7 @@ public class Main extends javax.swing.JFrame {
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         start.setEnabled(false);
         jButton4.setEnabled(false);
-        
+
         try {
             createXlsFile();
         } catch (IOException ex) {
@@ -961,12 +962,73 @@ public class Main extends javax.swing.JFrame {
             headerFont.setFontHeightInPoints((short) 14);
             headerFont.setColor(IndexedColors.RED.getIndex());
 
+            Font headerFont2 = workbook.createFont();
+            headerFont2.setBold(true);
+            headerFont2.setFontHeightInPoints((short) 14);
+            headerFont2.setColor(IndexedColors.BLACK.getIndex());
+
             CellStyle headerCellStyle = workbook.createCellStyle();
             headerCellStyle.setFont(headerFont);
-            Row headerRow = sheet.createRow(0);
+
+            CellStyle headerCellStyle2 = workbook.createCellStyle();
+            headerCellStyle2.setFont(headerFont2);
+
+            Row headerRow = sheet.createRow(1);
+            Row headerRow2 = sheet.createRow(0);
+//            
             ArrayList<String> list = new ArrayList();
+            ArrayList<String> list2 = new ArrayList();
+
+            list2.add("");
+            list2.add("EUR/USD");
+            list2.add("");
+
+            list2.add("");
+            list2.add("GBP/USD");
+            list2.add("");
+
+            list2.add("");
+            list2.add("USDJPY");
+            list2.add("");
+
+            list2.add("");
+            list2.add("USDCAD");
+            list2.add("");
+
+            list2.add("");
+            list2.add("AUDUSD");
+            list2.add("");
+
+            list2.add("");
+            list2.add("NZDUSD");
+            list2.add("");
+
+            list2.add("");
+            list2.add("SP500");
+            list2.add("");
+
+            list2.add("");
+            list2.add("US30 WALL STREET");
+            list2.add("");
+
+            list2.add("");
+            list2.add("BITCOIN");
+            list2.add("");
+
+            list2.add("");
+            list2.add("ETHEREUM");
+            list2.add("");
+
+            for (int i = 0; i < list2.size(); i++) {
+                Cell cell = headerRow2.createCell(i);
+                cell.setCellValue(list2.get(i));
+                cell.setCellStyle(headerCellStyle2);
+            }
+            CellStyle dateCellStyle2 = workbook.createCellStyle();
+            dateCellStyle2.setDataFormat(createHelper.createDataFormat().getFormat("dd/MM/yyyy"));
+
             list.add("Date");
-            for (int i = 0; i < 30; i++) {
+            for (int i = 0; i < 10; i++) {
                 list.add("Price");
                 list.add("Short");
                 list.add("Intrest");
@@ -980,7 +1042,7 @@ public class Main extends javax.swing.JFrame {
 
             CellStyle dateCellStyle = workbook.createCellStyle();
             dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd/MM/yyyy"));
-
+            sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 2));
             FileOutputStream fileOut = new FileOutputStream(location + "/forex.xlsx");
             workbook.write(fileOut);
             fileOut.close();
@@ -1182,6 +1244,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int min = Integer.parseInt(jTextField1.getText());
         interval = min;
+        System.out.println(interval + " set");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void open_sheetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_sheetActionPerformed
@@ -1406,10 +1469,10 @@ public class Main extends javax.swing.JFrame {
                 data.getUSDCAD().getAsk(), data.getUSDCAD().getShortValue(), data.getUSDCAD().getChangeOpenInterest(),
                 data.getAUDUSD().getAsk(), data.getAUDUSD().getShortValue(), data.getAUDUSD().getChangeOpenInterest(),
                 data.getNZDUSD().getAsk(), data.getNZDUSD().getShortValue(), data.getNZDUSD().getChangeOpenInterest(),
-                data.getBitcoin().getAsk(), data.getBitcoin().getShortValue(), data.getBitcoin().getChangeOpenInterest(),
-                data.getEthereum().getAsk(), data.getEthereum().getShortValue(), data.getEthereum().getChangeOpenInterest(),
                 data.getSP500().getAsk(), data.getSP500().getShortValue(), data.getSP500().getChangeOpenInterest(),
-                data.getUS30WallSttreet().getAsk(), data.getUS30WallSttreet().getShortValue(), data.getUS30WallSttreet().getChangeOpenInterest(),}
+                data.getUS30WallSttreet().getAsk(), data.getUS30WallSttreet().getShortValue(), data.getUS30WallSttreet().getChangeOpenInterest(),
+                data.getBitcoin().getAsk(), data.getBitcoin().getShortValue(), data.getBitcoin().getChangeOpenInterest(),
+                data.getEthereum().getAsk(), data.getEthereum().getShortValue(), data.getEthereum().getChangeOpenInterest(),}
             );
         } catch (NullPointerException e) {
             e.printStackTrace();
