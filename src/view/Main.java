@@ -91,6 +91,10 @@ public class Main extends javax.swing.JFrame {
     boolean ethereum_price = true;
     boolean ethereum_short = true;
     boolean ethereum_intrest = true;
+    
+    boolean us_oil_price = true;
+    boolean us_oil_short = true;
+    boolean us_oil_intrest = true;
 
     static int interval = 10;
     FirefoxDriver innerDriver;
@@ -127,27 +131,22 @@ public class Main extends javax.swing.JFrame {
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
         jToggleButton7 = new javax.swing.JToggleButton();
-        jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton8 = new javax.swing.JToggleButton();
         jToggleButton9 = new javax.swing.JToggleButton();
-        jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jToggleButton10 = new javax.swing.JToggleButton();
         jToggleButton11 = new javax.swing.JToggleButton();
         jToggleButton12 = new javax.swing.JToggleButton();
-        jSeparator4 = new javax.swing.JSeparator();
         jToggleButton13 = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jToggleButton14 = new javax.swing.JToggleButton();
         jToggleButton15 = new javax.swing.JToggleButton();
-        jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jToggleButton16 = new javax.swing.JToggleButton();
         jToggleButton17 = new javax.swing.JToggleButton();
         jToggleButton18 = new javax.swing.JToggleButton();
-        jSeparator6 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
         jToggleButton19 = new javax.swing.JToggleButton();
         jToggleButton20 = new javax.swing.JToggleButton();
@@ -157,17 +156,18 @@ public class Main extends javax.swing.JFrame {
         jToggleButton22 = new javax.swing.JToggleButton();
         jToggleButton23 = new javax.swing.JToggleButton();
         jToggleButton24 = new javax.swing.JToggleButton();
-        jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
         jToggleButton25 = new javax.swing.JToggleButton();
         jToggleButton26 = new javax.swing.JToggleButton();
         jToggleButton27 = new javax.swing.JToggleButton();
-        jSeparator9 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jToggleButton28 = new javax.swing.JToggleButton();
         jToggleButton29 = new javax.swing.JToggleButton();
         jToggleButton30 = new javax.swing.JToggleButton();
-        jSeparator10 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jToggleButton31 = new javax.swing.JToggleButton();
+        jToggleButton32 = new javax.swing.JToggleButton();
+        jToggleButton33 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -194,11 +194,11 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Date", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest"
+                "Date", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest", "Price", "Short", "Interest"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -276,8 +276,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jSeparator2.setForeground(new java.awt.Color(0, 153, 153));
-
         jLabel4.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("USDJPY");
@@ -311,8 +309,6 @@ public class Main extends javax.swing.JFrame {
                 jToggleButton9MouseClicked(evt);
             }
         });
-
-        jSeparator3.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel5.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -348,8 +344,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jSeparator4.setForeground(new java.awt.Color(0, 153, 153));
-
         jToggleButton13.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jToggleButton13.setForeground(java.awt.Color.green);
         jToggleButton13.setText("ON");
@@ -384,8 +378,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jSeparator5.setForeground(new java.awt.Color(0, 153, 153));
-
         jLabel7.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("NZDUSD");
@@ -397,6 +389,11 @@ public class Main extends javax.swing.JFrame {
         jToggleButton16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jToggleButton16MouseClicked(evt);
+            }
+        });
+        jToggleButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton16ActionPerformed(evt);
             }
         });
 
@@ -419,8 +416,6 @@ public class Main extends javax.swing.JFrame {
                 jToggleButton18MouseClicked(evt);
             }
         });
-
-        jSeparator6.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel8.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -492,8 +487,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jSeparator8.setForeground(new java.awt.Color(0, 153, 153));
-
         jLabel10.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Bitcoin");
@@ -527,8 +520,6 @@ public class Main extends javax.swing.JFrame {
                 jToggleButton27MouseClicked(evt);
             }
         });
-
-        jSeparator9.setForeground(new java.awt.Color(0, 153, 153));
 
         jLabel11.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -564,16 +555,61 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("US-Oil Crude");
+
+        jToggleButton31.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jToggleButton31.setForeground(java.awt.Color.green);
+        jToggleButton31.setText("ON");
+        jToggleButton31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton31MouseClicked(evt);
+            }
+        });
+        jToggleButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton31ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton32.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jToggleButton32.setForeground(java.awt.Color.green);
+        jToggleButton32.setText("ON");
+        jToggleButton32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton32MouseClicked(evt);
+            }
+        });
+
+        jToggleButton33.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jToggleButton33.setForeground(java.awt.Color.green);
+        jToggleButton33.setText("ON");
+        jToggleButton33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton33MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2537, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1226, 1226, 1226)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(760, 760, 760))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -581,8 +617,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -591,9 +626,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -601,8 +635,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -611,9 +644,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -621,9 +653,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -631,8 +662,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -641,9 +671,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                        .addComponent(jToggleButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -651,9 +680,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -661,9 +689,8 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jToggleButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -671,35 +698,25 @@ public class Main extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jToggleButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jToggleButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                        .addComponent(jToggleButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jToggleButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jToggleButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jToggleButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jToggleButton25)
-                                    .addComponent(jToggleButton27)
-                                    .addComponent(jToggleButton26))
-                                .addGap(2, 2, 2)
-                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jToggleButton28)
-                                    .addComponent(jToggleButton30)
-                                    .addComponent(jToggleButton29))
-                                .addGap(2, 2, 2)
-                                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(6, 6, 6)
@@ -708,72 +725,91 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jToggleButton24)
                                     .addComponent(jToggleButton23))
                                 .addGap(2, 2, 2)
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(6, 6, 6)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jToggleButton16)
-                                .addComponent(jToggleButton17)
-                                .addComponent(jToggleButton18))
-                            .addGap(2, 2, 2)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel2)
+                                                .addGap(6, 6, 6)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jToggleButton1)
+                                                    .addComponent(jToggleButton4)
+                                                    .addComponent(jToggleButton5)))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(6, 6, 6)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jToggleButton2)
+                                                    .addComponent(jToggleButton6)
+                                                    .addComponent(jToggleButton7)))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addGap(6, 6, 6)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jToggleButton10)
+                                                    .addComponent(jToggleButton11)
+                                                    .addComponent(jToggleButton12)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addGap(6, 6, 6)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jToggleButton3)
+                                                    .addComponent(jToggleButton8)
+                                                    .addComponent(jToggleButton9))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addGap(6, 6, 6)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jToggleButton13)
+                                                .addComponent(jToggleButton14)
+                                                .addComponent(jToggleButton15))))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jToggleButton16)
+                                            .addComponent(jToggleButton17)
+                                            .addComponent(jToggleButton18))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton13)
-                            .addComponent(jToggleButton14)
-                            .addComponent(jToggleButton15))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton10)
-                            .addComponent(jToggleButton11)
-                            .addComponent(jToggleButton12))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton3)
-                            .addComponent(jToggleButton8)
-                            .addComponent(jToggleButton9))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton2)
-                            .addComponent(jToggleButton6)
-                            .addComponent(jToggleButton7))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton1)
-                            .addComponent(jToggleButton4)
-                            .addComponent(jToggleButton5))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton19)
-                            .addComponent(jToggleButton21)
-                            .addComponent(jToggleButton20))
-                        .addGap(2, 2, 2)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jToggleButton25)
+                                            .addComponent(jToggleButton27)
+                                            .addComponent(jToggleButton26)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jToggleButton28)
+                                            .addComponent(jToggleButton30)
+                                            .addComponent(jToggleButton29)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jToggleButton31)
+                                            .addComponent(jToggleButton32)
+                                            .addComponent(jToggleButton33))))
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jToggleButton19)
+                                    .addComponent(jToggleButton21)
+                                    .addComponent(jToggleButton20))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1025,6 +1061,8 @@ public class Main extends javax.swing.JFrame {
             list2.add("ETHEREUM");
 //            list2.add("");
 
+            list2.add("US-Oil Crude");
+
             for (int i = 0; i < list2.size(); i++) {
                 Cell cell = headerRow2.createCell(i * 3+1);
                 cell.setCellValue(list2.get(i));
@@ -1037,7 +1075,7 @@ public class Main extends javax.swing.JFrame {
             dateCellStyle2.setDataFormat(createHelper.createDataFormat().getFormat("dd/MM/yyyy"));
 
             list.add("Date");
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 11; i++) {
                 list.add("Price");
                 list.add("Short");
                 list.add("Intrest");
@@ -1113,6 +1151,10 @@ public class Main extends javax.swing.JFrame {
             row.createCell(28).setCellValue(data.getEthereum().getAsk());
             row.createCell(29).setCellValue(data.getEthereum().getShortValue());
             row.createCell(30).setCellValue(data.getEthereum().getChangeOpenInterest());
+            
+            row.createCell(31).setCellValue(data.getUsOil().getAsk());
+            row.createCell(32).setCellValue(data.getUsOil().getShortValue());
+            row.createCell(33).setCellValue(data.getUsOil().getChangeOpenInterest());
             
              XSSFFormulaEvaluator.evaluateAllFormulaCells(wb3);
 
@@ -1278,6 +1320,30 @@ public class Main extends javax.swing.JFrame {
         start.setEnabled(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jToggleButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton16ActionPerformed
+
+    private void jToggleButton31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton31MouseClicked
+        // TODO add your handling code here:
+        us_oil_price = disableColumns(jToggleButton31);
+    }//GEN-LAST:event_jToggleButton31MouseClicked
+
+    private void jToggleButton32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton32MouseClicked
+        // TODO add your handling code here:
+        us_oil_short = disableColumns(jToggleButton32);
+    }//GEN-LAST:event_jToggleButton32MouseClicked
+
+    private void jToggleButton33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton33MouseClicked
+        // TODO add your handling code here:
+        us_oil_intrest = disableColumns(jToggleButton33);
+    }//GEN-LAST:event_jToggleButton33MouseClicked
+
+    private void jToggleButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton31ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jToggleButton31ActionPerformed
+
     private void scrapeRates(FirefoxDriver driver) throws InterruptedException, IOException, InvalidFormatException {
         Rates r = null;
         TableData data = new TableData();
@@ -1298,6 +1364,7 @@ public class Main extends javax.swing.JFrame {
                     || tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("AUDUSD")
                     || tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("NZDUSD")
                     || tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("Ethereum")
+                    || tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("Oil - US Crude")
                     || tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("Bitcoin")) {
 
                 System.out.println(tr.findElements(By.xpath("./*")).get(1).findElement(By.tagName("span")).getAttribute("data-value") + "+=======================");
@@ -1324,13 +1391,35 @@ public class Main extends javax.swing.JFrame {
                     data.setEthereum(getInnerData(r, tr.findElements(By.xpath("./*")).get(0).findElement(By.tagName("span")).findElement(By.tagName("a")).getAttribute("href")));
                 } else if (r.getSymbol().equalsIgnoreCase("Bitcoin")) {
                     data.setBitcoin(getInnerData(r, tr.findElements(By.xpath("./*")).get(0).findElement(By.tagName("span")).findElement(By.tagName("a")).getAttribute("href")));
+                }else if(r.getSymbol().equalsIgnoreCase("Oil - US Crude")){
+                    data.setUsOil(getInnerData(r,tr.findElements(By.xpath("./*")).get(0).findElement(By.tagName("span")).findElement(By.tagName("a")).getAttribute("href")));
                 }
 
             }
         }
-
-        WebElement Indices = driver.findElementByXPath("/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/table[2]/tbody");
+        
+        WebElement Indices = driver.findElementByXPath("/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/table[1]/tbody");
         List<WebElement> trs2 = Indices.findElements(By.xpath("./*"));
+        for (WebElement tr : trs2) {
+             System.out.println(tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText"));
+            // US 500 for SP 500
+            // Wall Street for US 30 Wall Street
+            if (tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText").equalsIgnoreCase("Oil - US Crude")) {
+
+                r = new Rates();
+                r.setSymbol(tr.findElements(By.xpath("./*")).get(0).getAttribute("innerText"));
+                r.setBid(tr.findElements(By.xpath("./*")).get(1).findElement(By.tagName("span")).getAttribute("data-value"));
+                r.setAsk(tr.findElements(By.xpath("./*")).get(2).findElement(By.tagName("span")).getAttribute("data-value"));
+
+                if (r.getSymbol().equalsIgnoreCase("Oil - US Crude")) {
+                    data.setUsOil(getInnerData(r, tr.findElements(By.xpath("./*")).get(0).findElement(By.tagName("span")).findElement(By.tagName("a")).getAttribute("href")));
+                } 
+
+            }
+        }
+
+        Indices = driver.findElementByXPath("/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/table[2]/tbody");
+        trs2 = Indices.findElements(By.xpath("./*"));
         for (WebElement tr : trs2) {
 
             // US 500 for SP 500
@@ -1407,6 +1496,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1420,15 +1510,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
@@ -1455,6 +1537,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton29;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton30;
+    private javax.swing.JToggleButton jToggleButton31;
+    private javax.swing.JToggleButton jToggleButton32;
+    private javax.swing.JToggleButton jToggleButton33;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
@@ -1485,7 +1570,8 @@ public class Main extends javax.swing.JFrame {
                 data.getSP500().getAsk(), data.getSP500().getShortValue(), data.getSP500().getChangeOpenInterest(),
                 data.getUS30WallSttreet().getAsk(), data.getUS30WallSttreet().getShortValue(), data.getUS30WallSttreet().getChangeOpenInterest(),
                 data.getBitcoin().getAsk(), data.getBitcoin().getShortValue(), data.getBitcoin().getChangeOpenInterest(),
-                data.getEthereum().getAsk(), data.getEthereum().getShortValue(), data.getEthereum().getChangeOpenInterest(),}
+                data.getEthereum().getAsk(), data.getEthereum().getShortValue(), data.getEthereum().getChangeOpenInterest(),
+                data.getUsOil().getAsk(), data.getUsOil().getShortValue(), data.getUsOil().getChangeOpenInterest(),}
             );
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -1647,6 +1733,18 @@ public class Main extends javax.swing.JFrame {
         }
         if (!ethereum_intrest) {
             data.getEthereum().setChangeOpenInterest("-");
+        }
+        
+        
+        if (!us_oil_price) {
+            data.getUsOil().setAsk("-");
+            data.getUsOil().setBid("-");
+        }
+        if (!us_oil_short) {
+            data.getUsOil().setShortValue("-");
+        }
+        if (!us_oil_intrest) {
+            data.getUsOil().setChangeOpenInterest("-");
         }
 
         return data;

@@ -20,6 +20,17 @@ public class TableData {
     private Rates Bitcoin;
     private Rates SP500;
     private Rates US30WallSttreet; 
+    private Rates UsOil;
+
+    public Rates getUsOil() {
+        return UsOil;
+    }
+
+    public void setUsOil(Rates UsOil) {
+        this.UsOil = UsOil;
+    }
+    
+    
 
     public Rates getEURUSD() {
         return EURUSD;

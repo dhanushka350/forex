@@ -89,11 +89,18 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="2537" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jSeparator1" min="-2" pref="228" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1226" max="-2" attributes="0"/>
+                      <Component id="jSeparator7" min="-2" pref="228" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="760" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -103,7 +110,6 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton5" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator1" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -115,9 +121,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton7" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator2" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -127,7 +132,6 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton9" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator3" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -139,9 +143,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton12" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator4" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel6" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -151,9 +154,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton15" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator5" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel7" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -163,7 +165,6 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton18" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator6" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -175,9 +176,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton20" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator7" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel9" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -187,9 +187,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton23" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator8" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel10" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -199,9 +198,8 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton26" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator9" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel11" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -211,9 +209,19 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jToggleButton29" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator10" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel15" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jToggleButton31" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="jToggleButton32" min="-2" pref="72" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="jToggleButton33" min="-2" pref="72" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -222,30 +230,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jToggleButton25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                      <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jToggleButton28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jToggleButton29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                      <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -254,91 +240,124 @@
                                           <Component id="jToggleButton24" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jToggleButton23" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                      <Component id="jSeparator8" min="-2" pref="10" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                      <Component id="jSeparator7" min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton6" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton7" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jToggleButton10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jToggleButton3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jToggleButton9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jToggleButton13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jToggleButton14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jToggleButton15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jToggleButton16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jToggleButton16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton18" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jToggleButton25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jToggleButton28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jToggleButton31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jToggleButton33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jToggleButton19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jToggleButton20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton15" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton12" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton7" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jToggleButton19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                              <Component id="jSeparator7" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="367" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="334" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -364,7 +383,7 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="31" rowCount="0">
+                      <Table columnCount="34" rowCount="0">
                         <Column editable="false" title="Date" type="java.lang.Object"/>
                         <Column editable="false" title="Price" type="java.lang.Object"/>
                         <Column editable="false" title="Short" type="java.lang.Object"/>
@@ -396,10 +415,28 @@
                         <Column editable="false" title="Price" type="java.lang.Object"/>
                         <Column editable="false" title="Short" type="java.lang.Object"/>
                         <Column editable="false" title="Interest" type="java.lang.Object"/>
+                        <Column editable="true" title="Price" type="java.lang.Object"/>
+                        <Column editable="true" title="Short" type="java.lang.Object"/>
+                        <Column editable="true" title="Interest" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="1">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -683,13 +720,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton7MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator2">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -749,13 +779,6 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton9MouseClicked"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator3">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -817,13 +840,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton12MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator4">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -884,13 +900,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton15MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator5">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -915,6 +924,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton16MouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton16ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton17">
@@ -950,13 +960,6 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton18MouseClicked"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator6">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -1085,13 +1088,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton24MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator8">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1151,13 +1147,6 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton27MouseClicked"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator9">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="0" type="rgb"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
@@ -1219,7 +1208,66 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton30MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JSeparator" name="jSeparator10">
+            <Component class="javax.swing.JLabel" name="jLabel15">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="US-Oil Crude"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="jToggleButton31">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="ff" id="green" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ON"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton31MouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton31ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="jToggleButton32">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="ff" id="green" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ON"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton32MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="jToggleButton33">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="ff" id="green" palette="1" red="0" type="palette"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ON"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jToggleButton33MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
