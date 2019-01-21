@@ -18,7 +18,7 @@ public class FirefoxInitializer {
     private  static FirefoxDriver driver;
 
     private FirefoxInitializer(){
-        System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
 

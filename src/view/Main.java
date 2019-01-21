@@ -33,6 +33,8 @@ import java.util.List;
 import javax.swing.JFileChooser;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellUtil;
+import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import org.openqa.selenium.By;
@@ -177,6 +179,7 @@ public class Main extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Currency Scrape");
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -919,20 +922,23 @@ public class Main extends javax.swing.JFrame {
         }
 
         System.out.println("INTERVAL " + interval);
-        System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./geckodriver");
         FirefoxOptions options2 = new FirefoxOptions();
         options2.setHeadless(true);
         innerDriver = new FirefoxDriver(options2);
 
         new Thread(() -> {
             FirefoxDriver innerDriver;
-            System.setProperty("webdriver.gecko.driver", "/var/lib/tomcat8/geckodriver");
+            System.setProperty("webdriver.gecko.driver", "./geckodriver");
             FirefoxOptions options = new FirefoxOptions();
             options.setHeadless(true);
+            FirefoxDriver driver=new FirefoxDriver(options);
+            
             while (true) {
                 try {
-
-                    scrapeRates(new FirefoxDriver(options));
+                    scrapeRates(driver);
+                    interval=Integer.parseInt(jTextField1.getText());
+                    System.out.println(interval+"    Interval    ");
                     Thread.sleep(interval * 60000);
 
                 } catch (InterruptedException e) {
@@ -952,7 +958,7 @@ public class Main extends javax.swing.JFrame {
         try {
             new FileInputStream(location + "/forex.xlsx");
         } catch (FileNotFoundException e) {
-            new File("/var/lib/tomcat8/forex").mkdir();
+//            new File("/var/lib/tomcat8/forex").mkdir();
             Workbook workbook = new XSSFWorkbook();
 
             CreationHelper createHelper = workbook.getCreationHelper();
@@ -979,49 +985,52 @@ public class Main extends javax.swing.JFrame {
             ArrayList<String> list = new ArrayList();
             ArrayList<String> list2 = new ArrayList();
 
-            list2.add("");
+//            list2.add("");
             list2.add("EUR/USD");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("GBP/USD");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("USDJPY");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("USDCAD");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("AUDUSD");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("NZDUSD");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("SP500");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("US30 WALL STREET");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("BITCOIN");
-            list2.add("");
+//            list2.add("");
 
-            list2.add("");
+//            list2.add("");
             list2.add("ETHEREUM");
-            list2.add("");
+//            list2.add("");
 
             for (int i = 0; i < list2.size(); i++) {
-                Cell cell = headerRow2.createCell(i);
+                Cell cell = headerRow2.createCell(i * 3+1);
                 cell.setCellValue(list2.get(i));
+                CellUtil.setAlignment(cell, HorizontalAlignment.CENTER);
+                sheet.addMergedRegion(new CellRangeAddress(0, 0, i * 3+1, i * 3 + 3));
+
                 cell.setCellStyle(headerCellStyle2);
             }
             CellStyle dateCellStyle2 = workbook.createCellStyle();
@@ -1042,7 +1051,6 @@ public class Main extends javax.swing.JFrame {
 
             CellStyle dateCellStyle = workbook.createCellStyle();
             dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd/MM/yyyy"));
-            sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 2));
             FileOutputStream fileOut = new FileOutputStream(location + "/forex.xlsx");
             workbook.write(fileOut);
             fileOut.close();
@@ -1058,6 +1066,7 @@ public class Main extends javax.swing.JFrame {
         try {
 
             Workbook wb3 = WorkbookFactory.create(new FileInputStream(location + "/forex.xlsx"));
+            wb3.setForceFormulaRecalculation(true);
             Sheet sh = wb3.getSheet("forex");
             int rows = sh.getLastRowNum();
 //            sh.shiftRows(2, sh.getLastRowNum(), 1, true, true);
@@ -1104,6 +1113,8 @@ public class Main extends javax.swing.JFrame {
             row.createCell(28).setCellValue(data.getEthereum().getAsk());
             row.createCell(29).setCellValue(data.getEthereum().getShortValue());
             row.createCell(30).setCellValue(data.getEthereum().getChangeOpenInterest());
+            
+             XSSFFormulaEvaluator.evaluateAllFormulaCells(wb3);
 
             FileOutputStream fileOut = new FileOutputStream(location + "/forex.xlsx");
             wb3.write(fileOut);
@@ -1274,6 +1285,8 @@ public class Main extends javax.swing.JFrame {
 
         driver.get("https://www.dailyfx.com/forex-rates?ref=TopRates");
 
+        Thread.sleep(3000);
+
         WebElement table = driver.findElementByXPath("/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/table");
         List<WebElement> trs = table.findElement(By.tagName("tbody")).findElements(By.xpath("./*"));
 
@@ -1339,7 +1352,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
         setData(data);
-        driver.close();
+//        driver.close();
     }
 
     /**
